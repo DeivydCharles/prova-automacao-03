@@ -1,4 +1,4 @@
-# Playwright 
+# Playwright E2E
 
 ## GitHub Actions + SonarCloud
 
