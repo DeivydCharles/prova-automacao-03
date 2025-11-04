@@ -13,10 +13,10 @@ test.describe('Loja Demoblaze - Teste com IA', () => {
     await page.goto(BASE_URL);
   });
 
-  test('Buying an apple iphone 6s', async ({ page }) => {
+  test('Buying an apple Iphone 6 32gb', async ({ page }) => {
     const aiArgs = { page, test };
     await page.waitForTimeout(5000);
-    await ai(`click in the iphone 6 32gb card`, aiArgs);
+    await ai(`Click on the "Iphone 6 32gb" product card`, aiArgs);
     await page.waitForTimeout(5000);
     await ai(`Click in the 'Add to Cart' button`, aiArgs);
     await page.waitForTimeout(5000);
