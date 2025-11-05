@@ -26,4 +26,17 @@ test.describe('Automation Exercise End-to-End Tests', () => {
       page.locator('h4.modal-title:has-text("Added!")')
     ).toBeVisible();
   });
+
+  test('Login with invalid credentials', async ({ page }) => {
+    await page.goto(baseURL);
+
+    await page.click('a[href="/login"]');
+    await expect(page).toHaveURL(/login/);
+
+    await page.fill('input[data-qa="login-email"]', 'fakeuser@example.com');
+    await page.fill('input[data-qa="login-password"]', 'wrongpassword');
+    await page.click('button[data-qa="login-button"]');
+
+    await expect(page.locator('p:has-text("Your email or password is incorrect!")')).toBeVisible();
+  });
 });
