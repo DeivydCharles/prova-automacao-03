@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { ai } from '@zerostep/playwright';
 
-test.describe('Dauane Automation Exercise End-to-End Tests', () => {
+test.describe('Automation Exercise End-to-End Tests', () => {
   const baseURL = 'https://automationexercise.com';
 
   test('Search for a product', async ({ page }) => {
