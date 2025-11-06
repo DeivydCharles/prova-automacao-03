@@ -18,13 +18,17 @@ test.describe('Automation Exercise End-to-End Tests', () => {
     ).toBeVisible();
   });
 
-  test('zerostep example for automationexercise', async ({ page }) => {
+test('Add product to cart using ZeroStep AI', async ({ page }) => {
     await page.goto('https://automationexercise.com/');
-    await page.click('a[href="/products"]');
-    await page.click('a[data-product-id="1"]');
-    await expect(
-      page.locator('h4.modal-title:has-text("Added!")')
-    ).toBeVisible();
+
+    await ai('Click on the "Products" link', { page, test });
+
+    await ai('Click the "Add to cart" button for the first product', { page, test });
+
+    const isModalVisible = await ai('Is the "Added!" confirmation modal visible?', { page, test });
+    
+
+    expect(isModalVisible).toBe(false);
   });
 
   test('Login with invalid credentials', async ({ page }) => {
